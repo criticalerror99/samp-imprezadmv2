@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Czas generowania: 17 Gru 2017, 12:33
+-- Czas generowania: 17 Gru 2017, 12:39
 -- Wersja serwera: 10.2.9-MariaDB-10.2.9+maria~stretch-log
 -- Wersja PHP: 7.0.19-1
 
@@ -491,7 +491,8 @@ CREATE TABLE `privcars` (
   `neontype` tinyint(4) NOT NULL DEFAULT -1,
   `dist` float NOT NULL DEFAULT 0,
   `paintjob` int(11) NOT NULL DEFAULT 0,
-  `comp` varchar(128) NOT NULL DEFAULT '0 0 0 0 0 0 0 0 0 0 0 0 0 0'
+  `comp` varchar(128) NOT NULL DEFAULT '0 0 0 0 0 0 0 0 0 0 0 0 0 0',
+  `upgrade` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
