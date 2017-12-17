@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Czas generowania: 17 Gru 2017, 12:39
+-- Czas generowania: 17 Gru 2017, 12:58
 -- Wersja serwera: 10.2.9-MariaDB-10.2.9+maria~stretch-log
 -- Wersja PHP: 7.0.19-1
 
@@ -211,7 +211,7 @@ CREATE TABLE `houses` (
 --
 
 INSERT INTO `houses` (`ID`, `HouseName`, `HouseOwner`, `HousePassword`, `HouseX`, `HouseY`, `HouseZ`, `HousePrice`, `HouseInterior`, `HouseLock`, `DomTime`, `HouseCzynsz`) VALUES
-(0, 'Domek', '-1', '-', 1497.02, -688.359, 95.455, 25000000, 22, 0, 0, 120),
+(0, 'Domek', '-1', '-', 1497.02, -688.359, 95.455, 25000000, 22, 0, 1513641233, 120),
 (1, 'Domek', '-1', '-', 1258.27, -785.423, 92.0302, 25000000, 14, 0, 0, 120),
 (2, 'Domek', '-1', '-', 827.999, -858.634, 70.3308, 500000, 10, 0, 0, 40),
 (3, 'Domek', '-1', '-', 300.376, -1154.58, 81.3913, 25000000, 22, 0, 0, 120),
@@ -429,11 +429,14 @@ CREATE TABLE `players` (
   `a5` int(11) NOT NULL DEFAULT 0,
   `a6` int(11) NOT NULL DEFAULT 0,
   `a7` int(11) NOT NULL DEFAULT 0,
+  `a8` int(11) NOT NULL DEFAULT 0,
+  `email` varchar(256) NOT NULL DEFAULT '0',
   `czat` int(11) NOT NULL DEFAULT 0,
   `solo` int(11) NOT NULL DEFAULT 0,
   `potwory` int(11) NOT NULL DEFAULT 0,
   `zabawy` int(11) NOT NULL DEFAULT 0,
   `visits` int(11) NOT NULL DEFAULT 0,
+  `ac0` int(11) NOT NULL DEFAULT 0,
   `ac1` tinyint(1) NOT NULL DEFAULT 0,
   `ac2` tinyint(1) NOT NULL DEFAULT 0,
   `ac3` tinyint(1) NOT NULL DEFAULT 0,
@@ -529,7 +532,7 @@ CREATE TABLE `serverstats` (
 --
 
 INSERT INTO `serverstats` (`record`, `daily`, `connects`, `kicks`, `bans`, `eq`, `pokemons`) VALUES
-(1, 1, 1, 0, 0, 2, 1);
+(1, 1, 4, 0, 0, 2, 1);
 
 -- --------------------------------------------------------
 
