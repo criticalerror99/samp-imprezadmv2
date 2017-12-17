@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Czas generowania: 17 Gru 2017, 12:58
+-- Czas generowania: 17 Gru 2017, 20:46
 -- Wersja serwera: 10.2.9-MariaDB-10.2.9+maria~stretch-log
 -- Wersja PHP: 7.0.19-1
 
@@ -91,7 +91,15 @@ CREATE TABLE `clans` (
   `maxy` float NOT NULL DEFAULT 0,
   `respekt` int(11) NOT NULL DEFAULT 0,
   `lider1` int(11) NOT NULL DEFAULT -1,
-  `lider2` int(11) NOT NULL DEFAULT -1
+  `lider2` int(11) NOT NULL DEFAULT -1,
+  `ga0` int(11) NOT NULL DEFAULT 0,
+  `ga1` int(11) NOT NULL DEFAULT 0,
+  `ga2` int(11) NOT NULL DEFAULT 0,
+  `ga3` int(11) DEFAULT 0,
+  `ga4` int(11) NOT NULL DEFAULT 0,
+  `ga5` int(11) NOT NULL DEFAULT 0,
+  `ga6` int(11) NOT NULL DEFAULT 0,
+  `ga7` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -532,7 +540,7 @@ CREATE TABLE `serverstats` (
 --
 
 INSERT INTO `serverstats` (`record`, `daily`, `connects`, `kicks`, `bans`, `eq`, `pokemons`) VALUES
-(1, 1, 4, 0, 0, 2, 1);
+(1, 1, 9, 0, 0, 2, 1);
 
 -- --------------------------------------------------------
 
