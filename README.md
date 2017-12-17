@@ -3,8 +3,8 @@
 Impreza DM v2 unfinished gamemode.
 Nieukończony gamemode Impreza DM v2.
 
-Database is creating automatically. You musst create players and houses table manually.
+Database included in .sql file.
 
-Struktura bazy danych jest generowana automatycznie, z wyjątkiem tabel players i houses. Należy je stworzyć ręcznie.
+Struktura bazy danych jest załączona w pliku .sql.
 
 **SA:MP 0.3.8 RC4-1**
