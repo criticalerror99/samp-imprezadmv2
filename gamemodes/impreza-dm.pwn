@@ -15281,11 +15281,21 @@ SaveAllData(playerid)
 	m_query("UPDATE players SET a1 = %d, a2 = %d, a3 = %d, a4 = %d, a5 = %d, a6 = %d, a7 = %d, a8 = %d, czat = %d, solo = %d, potwory = %d, zabawy = %d, visits = %d, cbug = %0.4f, questy = %d, jail = %d WHERE id = %d", Player[playerid][A1], Player[playerid][A2], Player[playerid][A3], Player[playerid][A4],
 		Player[playerid][A5], Player[playerid][A6], Player[playerid][A7], Player[playerid][A8], Player[playerid][Czat], Player[playerid][Solo], Player[playerid][Potwory], Player[playerid][Zabawyp], Player[playerid][Wizyty], Player[playerid][GL], Player[playerid][Questy], JailTimeP[playerid], Player[playerid][ID]);
 	m_query("UPDATE players SET bonus = %d, bank = %d, email = '%s', cpick = %d, bankc = %d, rud = %d, discord = '%s', gong = %d, auth = '%s' WHERE id = %d", Player[playerid][Bonus], Player[playerid][Bank], Player[playerid][Email], Player[playerid][CPick], Player[playerid][BankC], Player[playerid][Rud], DiscordUser[playerid], Player[playerid][Gang], Player[playerid][Auth], Player[playerid][ID]);
+	new skinquery[1024];
+	format(skinquery, sizeof(skinquery), "UPDATE players SET ");
 	Loop(skinid, MAX_SKINS) {
 	    new newid = skinid + 1;
-	    m_query("UPDATE players SET s%d = %d WHERE id = %d", newid, sk[playerid][skinid], Player[playerid][ID]); }
-	Loop(ach, 22) m_query("UPDATE players SET ac%d = %d WHERE id = %d", ach, pAch[playerid][ach]);
-	Loop(loopid, MAX_PLAYERS) { if(IsPlayerConnected(loopid)) SetTimerEx("HideSave", 3000, 0, "i", loopid); }
+		if(newid < MAX_SKINS) format(skinquery, sizeof(skinquery), "%ss%d = %d, ", skinquery, newid, sk[playerid][skinid]);
+		else format(skinquery, sizeof(skinquery), "%ss%d = %d ", skinquery, newid, sk[playerid][skinid]); }
+	format(skinquery, sizeof(skinquery), "WHERE id = %d", Player[playerid][ID]);
+	m_query(skinquery);
+	new achquery[1024];
+	format(achquery, sizeof(achquery), "UPDATE PLAYERS SET ");
+	Loop(ach, 22) {
+		if(ach < 21) format(achquery, sizeof(achquery), "%sac%d = %d, ", achquery, ach, pAch[playerid][ach]);
+		else format(achquery, sizeof(achquery), "%sac%d = %d WHERE id = %d", achquery, pAch[playerid][ach], Player[playerid][ID]); }
+	m_query(achquery);
+	SetTimerEx("HideSave", 3000, 0, "i", playerid);
 	return 1;
 }
 
