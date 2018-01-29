@@ -15287,7 +15287,7 @@ SaveAllData(playerid)
 	    new newid = skinid + 1;
 		if(newid < MAX_SKINS) format(skinquery, sizeof(skinquery), "%ss%d = %d, ", skinquery, newid, sk[playerid][skinid]);
 		else format(skinquery, sizeof(skinquery), "%ss%d = %d ", skinquery, newid, sk[playerid][skinid]); }
-	format(skinquery, sizeof(skinquery), "WHERE id = %d", Player[playerid][ID]);
+	format(skinquery, sizeof(skinquery), "%sWHERE id = %d", skinquery, Player[playerid][ID]);
 	m_query(skinquery);
 	new achquery[1024];
 	format(achquery, sizeof(achquery), "UPDATE PLAYERS SET ");
